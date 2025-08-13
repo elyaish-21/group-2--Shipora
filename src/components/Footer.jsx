@@ -7,7 +7,7 @@ export default function Footer() {
         <p className="text-sm">
           © {new Date().getFullYear()}{" "}
           <a
-            href="https://jaehub.com"
+            href="https://jaehubservices.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-blue hover:underline"
