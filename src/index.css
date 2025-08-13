@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-slate-800;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium transition;
+  }
+  .btn-primary {
+    @apply btn bg-brand-blue text-white hover:brightness-110;
+  }
+  .btn-dark {
+    @apply btn bg-slate-900 text-white hover:bg-slate-800;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto px-4;
+  }
+}
