@@ -6,12 +6,13 @@ import AboutSection from "./components/AboutSection";
 import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
+import Testimonial from "./components/Testimonial";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <div className="font-sans">
-      <TopBar />
+      <TopBar />  
       <Navbar />
       <main>
         <HeroSection />
@@ -20,6 +21,7 @@ export default function App() {
         <SectionOne />
         <SectionTwo />
         <SectionThree />
+        <Testimonial />
       </main>
       <Footer />
     </div>
