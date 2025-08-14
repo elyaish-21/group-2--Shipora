@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
           
           <div className="footer-bottom">
-            Copyright © 2025 Jaehub 
+            Copyright © 2025 Jae hub 
           </div>
         </footer>
       </>
