@@ -25,24 +25,34 @@ export default function HeroSection() {
         {/* Imagery */}
         <div className="relative">
           <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft grid place-items-center text-slate-500">
-              <div className="text-center">
-                <div className="text-4xl font-black">EXPORT</div>
-                <div className="text-xs tracking-widest uppercase">Containers</div>
-              </div>
+            
+            {/* EXPORT */}
+            <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
+              <img
+                src="/images/ship.jpg" // change path to your real export image
+                alt="Export Containers"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft grid place-items-center text-slate-500">
-              <div className="text-center">
-                <div className="text-4xl font-black">IMPORT</div>
-                <div className="text-xs tracking-widest uppercase">Containers</div>
-              </div>
+
+            {/* IMPORT */}
+            <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
+              <img
+                src="/images/ship.jpg" // change path to your real import image
+                alt="Import Containers"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="col-span-2 aspect-[16/9] rounded-2xl bg-white shadow-soft grid place-items-center text-slate-500">
-              <div className="text-center">
-                <div className="text-3xl font-black">GLOBAL</div>
-                <div className="text-xs tracking-widest uppercase">Freight Network</div>
-              </div>
+
+            {/* GLOBAL FREIGHT NETWORK */}
+            <div className="col-span-2 aspect-[16/9] rounded-2xl bg-white shadow-soft overflow-hidden">
+              <img
+                src="/images/ship.jpg" // change path to your real global freight image
+                alt="Global Freight Network"
+                className="w-full h-full object-cover"
+              />
             </div>
+
           </div>
         </div>
       </div>

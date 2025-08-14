@@ -5,8 +5,8 @@ export default function TopBar() {
     <div className="bg-black text-white text-xs sm:text-sm">
       <div className="container-max py-2 flex flex-col sm:flex-row gap-2 sm:gap-6 justify-between items-center">
         <div className="flex gap-4">
-          <span>📞 (+00) 286 8591</span>
-          <span>✉️ Support@jaehub.com</span>
+          <span>📞 +63-956-150-9151</span>
+          <span>✉️ https://jaehubservices.com</span>
         </div>
         <div className="flex gap-4">
           <a href="#" className="hover:underline">FAQ</a>
