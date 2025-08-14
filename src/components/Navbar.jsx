@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="container-max py-4 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <img src="/images/jaehub-logo.png" alt="JAEHub" className="h-10 w-10 rounded-lg shadow-soft" />
+            <img src="./images/jaehub-logo.png" alt="JAEHub" className="h-10 w-10 rounded-lg shadow-soft" />
             <span className="text-xl font-bold">JAE Hub</span>
           </a>
 
