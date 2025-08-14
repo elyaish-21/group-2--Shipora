@@ -7,6 +7,7 @@ import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
 import Testimonial from "./components/Testimonial";
+import Blog from "./components/Blog";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <SectionOne />
         <SectionTwo />
         <SectionThree />
+        <Blog />
         <Testimonial />
       </main>
       <Footer />
