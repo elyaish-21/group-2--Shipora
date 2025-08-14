@@ -1,5 +1,5 @@
 {
-  "name": "jaehub-shipora-homepage",
+  "name": "group-2--Shipora",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
-    "gh-pages": "^6.3.0",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.7",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "gh-pages": "^6.1.1"
   }
 }
