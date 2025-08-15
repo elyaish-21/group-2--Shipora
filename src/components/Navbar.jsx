@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import jaelogo from "../../public/images/JaehubLogo.png"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -8,11 +9,14 @@ export default function Navbar() {
       {/* Navbar */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur shadow">
         <div className="container-max py-4 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <img src="./images/jaehub-logo.png" alt="JAEHub" className="h-10 w-10 rounded-lg shadow-soft" />
-            <span className="text-xl font-bold">JAE Hub</span>
-          </a>
+       {/* Logo */}
+<a href="#" className="flex items-center">
+  <img
+    src={jaelogo}
+    alt="JAEHub"
+    className="h-12 w-auto object-contain"
+  />
+</a>
 
           {/* Desktop nav */}
           <nav className="flex items-center gap-8 font-medium text-slate-700">

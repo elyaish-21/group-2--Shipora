@@ -4,6 +4,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#d9ebf7] to-white">
       <div className="container-max py-16 md:py-24 grid md:grid-cols-2 items-center gap-10">
+        
         {/* Text */}
         <div>
           <span className="inline-block bg-brand-blue text-white text-xs font-semibold px-3 py-1 rounded">
@@ -29,7 +30,7 @@ export default function HeroSection() {
             {/* EXPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/ship.jpg" // change path to your real export image
+                src="/images/ship.jpg"
                 alt="Export Containers"
                 className="w-full h-full object-cover"
               />
@@ -38,7 +39,7 @@ export default function HeroSection() {
             {/* IMPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/ship.jpg" // change path to your real import image
+                src="/images/ship.jpg"
                 alt="Import Containers"
                 className="w-full h-full object-cover"
               />
@@ -47,7 +48,7 @@ export default function HeroSection() {
             {/* GLOBAL FREIGHT NETWORK */}
             <div className="col-span-2 aspect-[16/9] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/ship.jpg" // change path to your real global freight image
+                src="/images/Cargo.jpg"
                 alt="Global Freight Network"
                 className="w-full h-full object-cover"
               />
