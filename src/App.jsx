@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import SectionOne from "./components/SectionOne";
-import SectionTwo from "./components/SectionTwo";
+import Team from "./components/Team";
 import SectionThree from "./components/SectionThree";
 import Testimonial from "./components/Testimonial";
 import Blog from "./components/Blog";
@@ -20,7 +20,7 @@ export default function App() {
         <AboutSection />
         {/* Placeholders you can customize later */}
         <SectionOne />
-        <SectionTwo />
+        <Team />
         <SectionThree />
         <Blog />
         <Testimonial />
