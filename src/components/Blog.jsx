@@ -11,7 +11,6 @@ export default function Blog() {
             <div className="tag">Our Blog</div>
             <h1 className="blog--title">Global Asian News</h1>
          </div>
-
          <section className="blog-section">
             <div className="container">
                <div className="blog-grid">
