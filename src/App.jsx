@@ -22,8 +22,8 @@ export default function App() {
         <SectionOne />
         <Team />
         <SectionThree />
-        <Blog />
         <Testimonial />
+        <Blog />
       </main>
       <Footer />
     </div>
