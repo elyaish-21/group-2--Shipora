@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaShippingFast, FaSmile, FaFileContract, FaUserTie } from "react-icons/fa";
 
 const statsData = [
@@ -8,10 +8,12 @@ const statsData = [
   { id: 4, end: 165, label: "Crew Members", icon: <FaUserTie size={100} color="rgba(255,255,255,0.65)" /> },
 ];
 
-const StatCard = ({ end, label, icon }) => {
+const StatCard = ({ end, label, icon, trigger }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    if (!trigger) return; // Don't start counting until trigger is true
+
     let start = 0;
     const duration = 2000;
     const stepTime = Math.abs(Math.floor(duration / end));
@@ -23,7 +25,7 @@ const StatCard = ({ end, label, icon }) => {
     }, stepTime);
 
     return () => clearInterval(timer);
-  }, [end]);
+  }, [end, trigger]);
 
   return (
     <div
@@ -66,8 +68,32 @@ const StatCard = ({ end, label, icon }) => {
 };
 
 const StatsSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // run only once
+        }
+      },
+      { threshold: 0.3 } // triggers when 30% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
     <div
+      ref={sectionRef}
       style={{
         background: "#0d0d0d",
         padding: "60px",
@@ -77,7 +103,13 @@ const StatsSection = () => {
       }}
     >
       {statsData.map((stat) => (
-        <StatCard key={stat.id} end={stat.end} label={stat.label} icon={stat.icon} />
+        <StatCard
+          key={stat.id}
+          end={stat.end}
+          label={stat.label}
+          icon={stat.icon}
+          trigger={isVisible}
+        />
       ))}
     </div>
   );

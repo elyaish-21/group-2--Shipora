@@ -1,9 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 export default function AboutSection() {
   const [years, setYears] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Run only once
+        }
+      },
+      { threshold: 0.3 } // triggers when 30% of section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return; // Don't start counting until visible
+
     let start = 1;
     const end = 25;
     const duration = 2000;
@@ -16,12 +40,15 @@ export default function AboutSection() {
     }, stepTime);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section
+      id="about"
+      className="py-20 bg-white"
+      ref={sectionRef} // Reference for Intersection Observer
+    >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-
         {/* Image block */}
         <div className="relative flex flex-col items-start">
           {/* Blue line ABOVE the image */}
@@ -52,7 +79,7 @@ export default function AboutSection() {
 
         {/* Text block */}
         <div>
-          <span className="inline-block bg-blue-100 text-brand-blue text-xs font-semibold px-3 py-1 rounded">
+          <span className="inline-block bg-blue-100 text-brand-blue text-base font-semibold px-3 py-1 rounded">
             Why We Are
           </span>
           <h2 className="mt-4 text-4xl font-extrabold text-slate-900 leading-snug">
@@ -66,12 +93,13 @@ export default function AboutSection() {
             the majority have suffered alteration in some form, by injected
             humour, or slightly believable.
           </p>
-          <a
-            href="#more"
-            className="mt-8 inline-block bg-brand-blue text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
-          >
-            Read More
-          </a>
+         <a
+  href="#more"
+  className="mt-8 inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+>
+  Read More
+</a>
+
         </div>
       </div>
     </section>

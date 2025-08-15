@@ -8,7 +8,9 @@ export default function Blog() {
   return (
       <>
          <div className="centered">
-            <div className="tag">Our Blog</div>
+           <div className="inline-block bg-blue-100 text-brand-blue text-lg font-semibold px-4 py-2 rounded">
+  Our Blog
+</div>
             <h1 className="blog--title">Global Asian News</h1>
          </div>
          <section className="blog-section">

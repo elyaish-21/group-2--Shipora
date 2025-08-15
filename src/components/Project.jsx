@@ -73,7 +73,7 @@ const ProjectsSection = () => {
       marginLeft: "250px",
     },
     sectionTitle: {
-      fontSize: "16px",
+      fontSize: "17px",
       color: "#1E90FF",
       margin: 0,
       fontWeight: "600",
@@ -217,17 +217,22 @@ const ProjectsSection = () => {
       borderRadius: "8px",
     },
     largeReadMoreButton: {
-      backgroundColor: "#007BFF",
+      backgroundColor: "#080808ff",
       color: "white",
       border: "none",
-      padding: "10px 25px",
-      fontSize: "16px",
+      padding: "14px 35px", // increased size
+      fontSize: "14px", // larger text
       cursor: "pointer",
       borderRadius: "10px",
       fontWeight: "500",
       boxShadow: "0 4px 10px rgba(0, 123, 255, 0.3)",
-      transition: "all 0.3s ease",
-      },
+      transition: "background-color 0.3s ease, transform 0.2s ease",
+    },
+    largeReadMoreButtonHover: {
+      backgroundColor: "#0056b3", // darker blue on hover
+      transform: "scale(1.05)",
+    }
+
   };
 
   const projects = [
@@ -274,15 +279,19 @@ const ProjectsSection = () => {
         <div style={styles.titleContainer}>
           <h2 style={styles.sectionTitle}>Our Projects</h2>
         </div>
-        
+
         <div style={styles.headingRow}>
           <h1 style={styles.sectionHeading}>What We Delivered</h1>
-          <button style={styles.largeReadMoreButton}>
+          <button
+            style={styles.largeReadMoreButton}
+            onMouseEnter={(e) => Object.assign(e.target.style, styles.largeReadMoreButtonHover)}
+            onMouseLeave={(e) => Object.assign(e.target.style, styles.largeReadMoreButton)}
+          >
             Read More
           </button>
         </div>
 
-        <div 
+        <div
           style={styles.projectsContainer}
           onMouseEnter={handleSliderEnter}
           onMouseLeave={handleSliderLeave}
@@ -296,18 +305,18 @@ const ProjectsSection = () => {
             onMouseMove={handleMouseMove}
           >
             {projects.map((project) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 style={styles.projectCard}
                 onMouseEnter={() => setHoveredCard(project.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   style={styles.projectImage}
                 />
-                <div 
+                <div
                   style={{
                     ...styles.portfolioOverlay,
                     opacity: hoveredCard === project.id ? 1 : 0,
@@ -317,8 +326,8 @@ const ProjectsSection = () => {
                     ...styles.overlayTop,
                     transform: hoveredCard === project.id ? "translateY(0)" : "translateY(-100%)",
                   }}>
-                    <img 
-                      src={project.icon} 
+                    <img
+                      src={project.icon}
                       alt={`${project.title} icon`}
                       style={styles.projectIcon}
                     />

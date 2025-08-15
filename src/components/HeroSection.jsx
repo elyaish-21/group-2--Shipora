@@ -5,23 +5,37 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-gradient-to-r from-[#d9ebf7] to-white">
       <div className="container-max py-16 md:py-24 grid md:grid-cols-2 items-center gap-10">
         
-        {/* Text */}
-        <div>
-          <span className="inline-block bg-brand-blue text-white text-xs font-semibold px-3 py-1 rounded">
-            We Ship Your Hope
-          </span>
-          <h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight text-slate-900">
-            We Move Your Dream Forward To Build Your Future
-          </h1>
-          <p className="mt-4 text-slate-600">
-            There are many variations of passages of Lorem Ipsum available, but the
-            majority have suffered alteration in some form, by injected humour.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#about" className="btn-primary">Read More</a>
-            <a href="#contact" className="btn-dark">Contact Us</a>
-          </div>
-        </div>
+       {/* Text */}
+<div>
+  <span className="inline-block bg-brand-blue text-white text-base font-semibold px-3 py-1 rounded mb-2">
+  We Ship Your Hope
+</span>
+
+  <h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight text-slate-900">
+    We Move Your Dream Forward To Build Your Future
+  </h1>
+  <p className="mt-4 text-slate-600">
+    There are many variations of passages of Lorem Ipsum available, but the
+    majority have suffered alteration in some form, by injected humour.
+  </p>
+  <div className="mt-6 flex flex-wrap gap-3">
+   <a
+  href="#about"
+  className="bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+>
+  Read More
+</a>
+
+<a
+  href="#contact"
+  className="bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+>
+  Contact Us
+</a>
+
+  </div>
+</div>
+
 
         {/* Imagery */}
         <div className="relative">
@@ -30,7 +44,7 @@ export default function HeroSection() {
             {/* EXPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/ship.jpg"
+                src="/images/Export.png"
                 alt="Export Containers"
                 className="w-full h-full object-cover"
               />
@@ -39,7 +53,7 @@ export default function HeroSection() {
             {/* IMPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/ship.jpg"
+                src="/images/Import.png"
                 alt="Import Containers"
                 className="w-full h-full object-cover"
               />
