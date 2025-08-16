@@ -160,13 +160,13 @@ const testimonials = [
     name: "Sarah De Guzman",
     title: "Fashion Brand Exporter",
     text: "Shipora makes shipping my fashion materials so easy. They always deliver on time and take great care of my packages.",
-    image: "./images/AsianClient1.jpg",
+    image: "/images/AsianClient1.jpg",
   },
   {
     name: "John Santos",
     title: "Logistics Manager",
     text: "With Shipora, our shipments arrive when they should. They keep me updated and make the whole process smooth.",
-    image: "./images/AsianClient2.jpg",
+    image: "/images/AsianClient2.jpg",
   },
 ];
 
