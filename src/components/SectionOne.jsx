@@ -3,25 +3,23 @@ import { FaPlus } from "react-icons/fa";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const SectionOne = () => {
-  const base = import.meta.env.BASE_URL;
-
   const services = [
     {
       icon: (
         <>
           <img
-            src={`${base}images/sparcelBLUE.png`}
+            src="/images/sparcelBLUE.png"
             alt="Secure Parcel"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src={`${base}images/sparcelWHITE.png`}
+            src="/images/sparcelWHITE.png"
             alt="Secure Parcel Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: `${base}images/sparcelWHITE.png`,
+      hoverIcon: "/images/sparcelWHITE.png",
       title: "Secure Parcel",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -29,18 +27,18 @@ const SectionOne = () => {
       icon: (
         <>
           <img
-            src={`${base}images/ltrackingBLUE.png`}
+            src="/images/ltrackingBLUE.png"
             alt="Live Tracking"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src={`${base}images/ltrackingWHITE.png`}
+            src="/images/ltrackingWHITE.png"
             alt="Live Tracking Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: `${base}images/ltrackingWHITE.png`,
+      hoverIcon: "/images/ltrackingWHITE.png",
       title: "Live Tracking",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -48,18 +46,18 @@ const SectionOne = () => {
       icon: (
         <>
           <img
-            src={`${base}images/ccBLUE.png`}
+            src="/images/ccBLUE.png"
             alt="Custom Clearance"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src={`${base}images/ccWHITE.png`}
+            src="/images/ccWHITE.png"
             alt="Custom Clearance Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: `${base}images/ccWHITE.png`,
+      hoverIcon: "/images/ccWHITE.png",
       title: "Custom Clearance",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -67,18 +65,18 @@ const SectionOne = () => {
       icon: (
         <>
           <img
-            src={`${base}images/shipBLUE.png`}
+            src="/images/shipBLUE.png"
             alt="Fast Delivery"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src={`${base}images/shipWHITE.png`}
+            src="/images/shipWHITE.png"
             alt="Fast Delivery Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: `${base}images/shipWHITE.png`,
+      hoverIcon: "/images/shipWHITE.png",
       title: "Fast Delivery",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -91,7 +89,7 @@ const SectionOne = () => {
       <div
         className="absolute top-0 left-0 right-0 h-3/4 bg-blue-200 opacity-90 z-0"
         style={{
-          backgroundImage: `url('${base}images/shiporabg.png')`,
+          backgroundImage: "url('/images/shiporabg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "multiply",
