@@ -10,15 +10,13 @@ export default function AboutSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Run only once
+          observer.disconnect();
         }
       },
-      { threshold: 0.3 } // triggers when 30% of section is visible
+      { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
@@ -26,7 +24,7 @@ export default function AboutSection() {
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return; // Don't start counting until visible
+    if (!isVisible) return;
 
     let start = 1;
     const end = 25;
@@ -43,29 +41,21 @@ export default function AboutSection() {
   }, [isVisible]);
 
   return (
-    <section
-      id="about"
-      className="py-20 bg-white"
-      ref={sectionRef} // Reference for Intersection Observer
-    >
+    <section id="about" className="py-20 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Image block */}
         <div className="relative flex flex-col items-start">
-          {/* Blue line ABOVE the image */}
           <div className="w-[60%] h-[5px] bg-brand-blue rounded mb-4"></div>
 
           <div className="relative">
-            {/* Black line on left */}
             <div className="absolute -left-5 top-10 h-[60%] w-[5px] bg-black rounded"></div>
 
-            {/* Main image */}
             <img
-              src="/images/ship.jpg"
+              src={`${process.env.PUBLIC_URL}/images/ship.jpg`}
               alt="Cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
 
-            {/* 25 Years Badge */}
             <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
               <div className="text-5xl font-extrabold leading-tight">
                 {years}
@@ -93,13 +83,12 @@ export default function AboutSection() {
             the majority have suffered alteration in some form, by injected
             humour, or slightly believable.
           </p>
-         <a
-  href="#more"
-  className="mt-8 inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
->
-  Read More
-</a>
-
+          <a
+            href="#more"
+            className="mt-8 inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+          >
+            Read More
+          </a>
         </div>
       </div>
     </section>
