@@ -1,5 +1,10 @@
 import React, { useState, useRef } from "react";
+<<<<<<< Updated upstream
 import { FaPlus } from "react-icons/fa";"
+=======
+import { FaPlus } from "react-icons/fa";
+import  from "/images/"
+>>>>>>> Stashed changes
 
 const ProjectsSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -220,8 +225,8 @@ const ProjectsSection = () => {
       backgroundColor: "#080808ff",
       color: "white",
       border: "none",
-      padding: "14px 35px", // increased size
-      fontSize: "14px", // larger text
+      padding: "14px 35px",
+      fontSize: "14px",
       cursor: "pointer",
       borderRadius: "10px",
       fontWeight: "500",
@@ -229,7 +234,7 @@ const ProjectsSection = () => {
       transition: "background-color 0.3s ease, transform 0.2s ease",
     },
     largeReadMoreButtonHover: {
-      backgroundColor: "#0056b3", // darker blue on hover
+      backgroundColor: "#0056b3",
       transform: "scale(1.05)",
     }
 
