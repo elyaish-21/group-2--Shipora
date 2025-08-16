@@ -87,7 +87,7 @@ const ProjectsSection = () => {
       padding: "6px 10px",
       width: "fit-content",
       margin: "20px 20px 20px 160px",
-      borderRadius: "6px",
+      borderRadius: "9px",
     },
     sectionTitle: {
       fontSize: "16px",
