@@ -1,12 +1,18 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
+// ✅ Proper imports for images
+import TrustedAsianExpert1 from "/images/TrustedAsianExpert1.jpg";
+import TrustedAsianExpert2 from "/images/TrustedAsianExpert2.jpg";
+import TrustedAsianExpert3 from "/images/TrustedAsianExpert3.jpg";
+import TrustedAsianExpert4 from "/images/TrustedAsianExpert4.jpg";
+
 export default function TeamSection() {
   const team = [
-    { name: "James Lopez", role: "CEO", img: "/images/TrustedAsianExpert1.jpg" },
-    { name: "Albert Martinez", role: "HR Manager", img: "/images/TrustedAsianExpert2.jpg" },
-    { name: "Daniel Bautista", role: "Finance Analyst", img: "/images/TrustedAsianExpert3.jpg" },
-    { name: "Sophia Garcia", role: "Customer Support", img: "/images/TrustedAsianExpert4.jpg" },
+    { name: "James Lopez", role: "CEO", img: TrustedAsianExpert1 },
+    { name: "Albert Martinez", role: "HR Manager", img: TrustedAsianExpert2 },
+    { name: "Daniel Bautista", role: "Finance Analyst", img: TrustedAsianExpert3 },
+    { name: "Sophia Garcia", role: "Customer Support", img: TrustedAsianExpert4 },
   ];
 
   return (
@@ -33,7 +39,6 @@ export default function TeamSection() {
                 />
 
                 <div className="absolute inset-0 bg-blue-600 flex flex-col justify-center items-center transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-                  
                   <div className="flex space-x-4 text-white text-lg">
                     <a href="#"><FaFacebookF /></a>
                     <a href="#"><FaInstagram /></a>

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+// ✅ Import image properly
+import shipImg from "/images/ship.jpg";
+
 export default function AboutSection() {
   const [years, setYears] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +59,7 @@ export default function AboutSection() {
 
             {/* Main image */}
             <img
-              src="/images/ship.jpg"
+              src={shipImg} // ✅ Use imported image
               alt="Cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
@@ -89,12 +92,7 @@ export default function AboutSection() {
             the majority have suffered alteration in some form, by injected
             humour, or slightly believable.
           </p>
-
-          {/* Updated Read More button */}
-          <a href="#more" className={`${readMoreClasses} mt-8`}>
-            Read More
-          </a>
-
+          
           {/* Example for other buttons */}
           <div className="mt-6 flex gap-4">
             <a href="#about" className={readMoreClasses}>
@@ -103,7 +101,6 @@ export default function AboutSection() {
             <a href="#contact" className={readMoreClasses}>
               Contact Us
             </a>
-            <button className={readMoreClasses}>Read More</button>
           </div>
         </div>
       </div>

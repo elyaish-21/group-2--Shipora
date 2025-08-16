@@ -2,24 +2,35 @@ import React from "react";
 import { FaPlus } from "react-icons/fa";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
+// ✅ Import images properly
+import sparcelBLUE from "/images/sparcelBLUE.png";
+import sparcelWHITE from "/images/sparcelWHITE.png";
+import ltrackingBLUE from "/images/ltrackingBLUE.png";
+import ltrackingWHITE from "/images/ltrackingWHITE.png";
+import ccBLUE from "/images/ccBLUE.png";
+import ccWHITE from "/images/ccWHITE.png";
+import shipBLUE from "/images/shipBLUE.png";
+import shipWHITE from "/images/shipWHITE.png";
+import shiporabg from "/images/shiporabg.png";
+
 const SectionOne = () => {
   const services = [
     {
       icon: (
         <>
           <img
-            src="/images/sparcelBLUE.png"
+            src={sparcelBLUE}
             alt="Secure Parcel"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src="/images/sparcelWHITE.png"
+            src={sparcelWHITE}
             alt="Secure Parcel Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: "/images/sparcelWHITE.png",
+      hoverIcon: sparcelWHITE,
       title: "Secure Parcel",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -27,18 +38,18 @@ const SectionOne = () => {
       icon: (
         <>
           <img
-            src="/images/ltrackingBLUE.png"
+            src={ltrackingBLUE}
             alt="Live Tracking"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src="/images/ltrackingWHITE.png"
+            src={ltrackingWHITE}
             alt="Live Tracking Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: "/images/ltrackingWHITE.png",
+      hoverIcon: ltrackingWHITE,
       title: "Live Tracking",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -46,18 +57,18 @@ const SectionOne = () => {
       icon: (
         <>
           <img
-            src="/images/ccBLUE.png"
+            src={ccBLUE}
             alt="Custom Clearance"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src="/images/ccWHITE.png"
+            src={ccWHITE}
             alt="Custom Clearance Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: "/images/ccWHITE.png",
+      hoverIcon: ccWHITE,
       title: "Custom Clearance",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -65,18 +76,18 @@ const SectionOne = () => {
       icon: (
         <>
           <img
-            src="/images/shipBLUE.png"
+            src={shipBLUE}
             alt="Fast Delivery"
             className="w-16 h-16 object-contain group-hover:hidden"
           />
           <img
-            src="/images/shipWHITE.png"
+            src={shipWHITE}
             alt="Fast Delivery Hover"
             className="w-16 h-16 object-contain hidden group-hover:block"
           />
         </>
       ),
-      hoverIcon: "/images/shipWHITE.png",
+      hoverIcon: shipWHITE,
       title: "Fast Delivery",
       description: "There are many variations of passages of Lorem Ipsum available.",
     },
@@ -89,7 +100,7 @@ const SectionOne = () => {
       <div
         className="absolute top-0 left-0 right-0 h-3/4 bg-blue-200 opacity-90 z-0"
         style={{
-          backgroundImage: "url('/images/shiporabg.png')",
+          backgroundImage: `url(${shiporabg})`, // ✅ fixed import
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "multiply",

@@ -1,5 +1,10 @@
 import React from "react";
 
+// ✅ Import images instead of using "/images/..."
+import exportImg from "/images/Export.png";
+import importImg from "/images/Import.png";
+import cargoImg from "/images/Cargo.jpg";
+
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#d9ebf7] to-white">
@@ -39,7 +44,7 @@ export default function HeroSection() {
             {/* EXPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/Export.png"
+                src={exportImg}
                 alt="Export Containers"
                 className="w-full h-full object-cover"
               />
@@ -48,7 +53,7 @@ export default function HeroSection() {
             {/* IMPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/Import.png"
+                src={importImg}
                 alt="Import Containers"
                 className="w-full h-full object-cover"
               />
@@ -57,7 +62,7 @@ export default function HeroSection() {
             {/* GLOBAL FREIGHT NETWORK */}
             <div className="col-span-2 aspect-[16/9] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/Cargo.jpg"
+                src={cargoImg}
                 alt="Global Freight Network"
                 className="w-full h-full object-cover"
               />

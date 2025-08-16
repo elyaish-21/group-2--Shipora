@@ -3,11 +3,16 @@ import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
+// ✅ Proper image imports
+import ShipBg from "/images/ship.jpg";
+import AsianClient1 from "/images/AsianClient1.jpg";
+import AsianClient2 from "/images/AsianClient2.jpg";
+
 const styles = {
   section: {
     position: "relative",
     textAlign: "center",
-    backgroundImage: "url(/images/ship.jpg)",
+    backgroundImage: `url(${ShipBg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -160,13 +165,13 @@ const testimonials = [
     name: "Sarah De Guzman",
     title: "Fashion Brand Exporter",
     text: "Shipora makes shipping my fashion materials so easy. They always deliver on time and take great care of my packages.",
-    image: "/images/AsianClient1.jpg",
+    image: AsianClient1, // ✅ use imported image
   },
   {
     name: "John Santos",
     title: "Logistics Manager",
     text: "With Shipora, our shipments arrive when they should. They keep me updated and make the whole process smooth.",
-    image: "/images/AsianClient2.jpg",
+    image: AsianClient2, // ✅ use imported image
   },
 ];
 
