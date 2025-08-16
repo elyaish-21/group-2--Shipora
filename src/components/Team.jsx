@@ -2,11 +2,13 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 export default function TeamSection() {
+  const base = import.meta.env.BASE_URL;
+
   const team = [
-    { name: "James Lopez", role: "CEO", img: "/images/TrustedAsianExpert1.jpg" },
-    { name: "Albert Martinez", role: "HR Manager", img: "/images/TrustedAsianExpert2.jpg" },
-    { name: "Daniel Bautista", role: "Finance Analyst", img: "/images/TrustedAsianExpert3.jpg" },
-    { name: "Sophia Garcia", role: "Customer Support", img: "/images/TrustedAsianExpert4.jpg" },
+    { name: "James Lopez", role: "CEO", img: `${base}images/TrustedAsianExpert1.jpg` },
+    { name: "Albert Martinez", role: "HR Manager", img: `${base}images/TrustedAsianExpert2.jpg` },
+    { name: "Daniel Bautista", role: "Finance Analyst", img: `${base}images/TrustedAsianExpert3.jpg` },
+    { name: "Sophia Garcia", role: "Customer Support", img: `${base}images/TrustedAsianExpert4.jpg` },
   ];
 
   return (
