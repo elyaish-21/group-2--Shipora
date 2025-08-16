@@ -1,9 +1,8 @@
 import React from "react";
-
-// ✅ Import images just like Blog component
 import exportImg from "/images/Export.png";
 import importImg from "/images/Import.png";
 import cargoImg from "/images/Cargo.jpg";
+
 
 export default function HeroSection() {
   return (
