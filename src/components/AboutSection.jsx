@@ -98,9 +98,6 @@ export default function AboutSection() {
             <a href="#about" className={readMoreClasses}>
               Read More
             </a>
-            <a href="#contact" className={readMoreClasses}>
-              Contact Us
-            </a>
           </div>
         </div>
       </div>
