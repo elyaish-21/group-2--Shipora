@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import barko from "/images/barko.png"; // ✅ same import style as Blog component
+import barko from "/images/barko.png";
 
 export default function AboutSection() {
   const [years, setYears] = useState(1);
