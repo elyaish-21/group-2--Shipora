@@ -286,7 +286,7 @@ const ProjectsSection = () => {
         </div>
 
         <div style={styles.headingRow}>
-          <h1 style={styles.sectionHeading}>What We Delivered</h1>
+          <h1 style={styles.sectionHeading}>What We</h1>
           <button
             style={styles.largeReadMoreButton}
             onMouseEnter={(e) => Object.assign(e.target.style, styles.largeReadMoreButtonHover)}
