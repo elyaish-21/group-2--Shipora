@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { FaPlus } from "react-icons/fa";
+import deliver1 from "/images/RouteDesign.png"
 
 const ProjectsSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -241,7 +242,7 @@ const ProjectsSection = () => {
       title: "Route Design",
       description: "Planning the most efficient paths for deliveries.",
       image: "/images/WhatWeDelivered1.jpg",
-      icon: "/images/RouteDesign.png",
+      icon: "deliver1",
     },
     {
       id: 2,
