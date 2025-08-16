@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import { FaPlus } from "react-icons/fa";
-import deliver1 from "/images/RouteDesign.png"
+import { FaPlus } from "react-icons/fa";"
 
 const ProjectsSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -241,22 +240,22 @@ const ProjectsSection = () => {
       id: 1,
       title: "Route Design",
       description: "Planning the most efficient paths for deliveries.",
-      image: "/images/WhatWeDelivered1.jpg",
-      icon: "deliver1",
+      image: "images/WhatWeDelivered1.jpg",
+      icon: "images/RouteDesign.png",
     },
     {
       id: 2,
       title: "Shipping Solutions",
       description: "Services that move goods quickly and safely.",
-      image: "/images/WhatWeDelivered2.jpg",
-      icon: "/images/ShippingSolutions.png",
+      image: "images/WhatWeDelivered2.jpg",
+      icon: "images/ShippingSolutions.png",
     },
     {
       id: 3,
       title: "Cargo Management",
       description: "Organizing, tracking, and handling shipments.",
-      image: "/images/WhatWeDelivered3.jpg",
-      icon: "/images/CargoManagement.png",
+      image: "images/WhatWeDelivered3.jpg",
+      icon: "images/CargoManagement.png",
     },
     {
       id: 4,
