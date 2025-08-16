@@ -1,10 +1,6 @@
 import React, { useState, useRef } from "react";
-<<<<<<< Updated upstream
-import { FaPlus } from "react-icons/fa";"
-=======
 import { FaPlus } from "react-icons/fa";
-import  from "/images/"
->>>>>>> Stashed changes
+import { FaPlus } from "react-icons/fa";
 
 const ProjectsSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
