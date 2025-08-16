@@ -1,10 +1,34 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import barko from "/images/barko.png"; // ✅ same import style as Blog component
 
 export default function AboutSection() {
   const [years, setYears] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     let start = 1;
     const end = 25;
     const duration = 2000;
@@ -20,48 +44,53 @@ export default function AboutSection() {
   }, [isVisible]);
 
   return (
-    <section id="about" className="py-28 bg-white">
+    <section id="about" className="py-20 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        
-        {/* Image Section */}
+        {/* Image block */}
         <div className="relative flex flex-col items-start">
-          {/* Blue line above image */}
           <div className="w-[60%] h-[5px] bg-brand-blue rounded mb-4"></div>
 
           <div className="relative">
-            {/* Black line on left */}
             <div className="absolute -left-5 top-10 h-[60%] w-[5px] bg-black rounded"></div>
 
-            {/* Main image */}
+            {/* ✅ Imported barko.png */}
             <img
-              src="/images/barko.png"
-              alt="barko pic"
+              src={barko}
+              alt="Cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
-          </div>
 
-          {/* 25 Years Badge */}
-          <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
-            <div className="text-5xl font-extrabold leading-tight">
-              {years}
-            </div>
-            <div className="text-sm uppercase tracking-widest">
-              Years of Experience
+            <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
+              <div className="text-5xl font-extrabold leading-tight">{years}</div>
+              <div className="text-sm uppercase tracking-widest">
+                Years of Experience
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Text Section */}
+        {/* Text block */}
         <div>
-          <h2 className="text-4xl font-bold mb-6">
-            About Our Shipping Services
+          <span className="inline-block bg-blue-100 text-brand-blue text-base font-semibold px-3 py-1 rounded">
+            Why We Are
+          </span>
+          <h2 className="mt-4 text-4xl font-extrabold text-slate-900 leading-snug">
+            Powerful Shipping Network Built For Modern Businesses
           </h2>
-          <p className="text-lg leading-relaxed text-gray-700">
-            We have been providing reliable shipping services for over two decades,
-            ensuring safe and efficient transport of goods worldwide. Our dedicated
-            team works around the clock to meet the needs of our clients, offering
-            tailored solutions for every shipment.
+          <p className="mt-4 text-2xl font-bold italic text-slate-900 border-b-4 border-brand-blue inline-block pb-1">
+            Powerful Logistics. Worldwide Cargo Delivery.
           </p>
+          <p className="mt-4 text-slate-600 max-w-lg">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or slightly believable.
+          </p>
+          <a
+            href="#more"
+            className="mt-8 inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+          >
+            Read More
+          </a>
         </div>
       </div>
     </section>
