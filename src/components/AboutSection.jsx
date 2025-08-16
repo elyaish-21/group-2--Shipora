@@ -72,7 +72,7 @@ export default function AboutSection() {
         {/* Text block */}
         <div>
           <span className="inline-block bg-blue-100 text-brand-blue text-base font-semibold px-3 py-1 rounded">
-            Why We Are
+            Why We 
           </span>
           <h2 className="mt-4 text-4xl font-extrabold text-slate-900 leading-snug">
             Powerful Shipping Network Built For Modern Businesses
