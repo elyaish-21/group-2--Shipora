@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
-import barko from "/images/barko.png"; // ✅ same import style as Blog component
 
 export default function AboutSection() {
   const [years, setYears] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  const base = import.meta.env.BASE_URL; // ✅ ensures images work on GitHub Pages
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,7 +45,11 @@ export default function AboutSection() {
   }, [isVisible]);
 
   return (
-    <section id="about" className="py-20 bg-white" ref={sectionRef}>
+    <section
+      id="about"
+      className="py-20 bg-white"
+      ref={sectionRef}
+    >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Image block */}
         <div className="relative flex flex-col items-start">
@@ -53,15 +58,17 @@ export default function AboutSection() {
           <div className="relative">
             <div className="absolute -left-5 top-10 h-[60%] w-[5px] bg-black rounded"></div>
 
-            {/* ✅ Imported barko.png */}
+            {/* ✅ barko.png from public/images */}
             <img
-              src={barko}
+              src={`${base}images/barko.png`}
               alt="Cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
 
             <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
-              <div className="text-5xl font-extrabold leading-tight">{years}</div>
+              <div className="text-5xl font-extrabold leading-tight">
+                {years}
+              </div>
               <div className="text-sm uppercase tracking-widest">
                 Years of Experience
               </div>
@@ -72,7 +79,7 @@ export default function AboutSection() {
         {/* Text block */}
         <div>
           <span className="inline-block bg-blue-100 text-brand-blue text-base font-semibold px-3 py-1 rounded">
-            Why We 
+            Why We Are
           </span>
           <h2 className="mt-4 text-4xl font-extrabold text-slate-900 leading-snug">
             Powerful Shipping Network Built For Modern Businesses
