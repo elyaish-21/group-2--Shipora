@@ -55,7 +55,7 @@ export default function AboutSection() {
 
             {/* Image with BASE_URL path */}
             <img
-              src={`${base}images/Export.jpg`}
+              src={`${base}images/ship.jpg`}
               alt="Cargo Ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
