@@ -61,7 +61,7 @@ export default function AboutSection() {
 
             {/* Main image */}
             <img
-              src={`${base}images/Cargo.jpg`}
+              src={`${base}images/Barko.png`}
               alt="Cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
