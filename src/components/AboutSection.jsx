@@ -1,35 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export default function AboutSection() {
   const [years, setYears] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  const base = import.meta.env.BASE_URL; // Ensures correct image path on GitHub Pages
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // Run only once
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
     let start = 1;
     const end = 25;
     const duration = 2000;
@@ -45,11 +20,12 @@ export default function AboutSection() {
   }, [isVisible]);
 
   return (
-    <section id="about" className="py-20 bg-white" ref={sectionRef}>
+    <section id="about" className="py-28 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        {/* Image block */}
+        
+        {/* Image Section */}
         <div className="relative flex flex-col items-start">
-          {/* Blue line ABOVE the image */}
+          {/* Blue line above image */}
           <div className="w-[60%] h-[5px] bg-brand-blue rounded mb-4"></div>
 
           <div className="relative">
@@ -58,45 +34,34 @@ export default function AboutSection() {
 
             {/* Main image */}
             <img
-              src={`${base}images/barko.png`}
-              alt="Cargo ship"
+              src="/images/barko.png"
+              alt="cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
+          </div>
 
-            {/* 25 Years Badge */}
-            <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
-              <div className="text-5xl font-extrabold leading-tight">
-                {years}
-              </div>
-              <div className="text-sm uppercase tracking-widest">
-                Years of Experience
-              </div>
+          {/* 25 Years Badge */}
+          <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
+            <div className="text-5xl font-extrabold leading-tight">
+              {years}
+            </div>
+            <div className="text-sm uppercase tracking-widest">
+              Years of Experience
             </div>
           </div>
         </div>
 
-        {/* Text block */}
+        {/* Text Section */}
         <div>
-          <span className="inline-block bg-blue-100 text-brand-blue text-base font-semibold px-3 py-1 rounded">
-            Why We Are
-          </span>
-          <h2 className="mt-4 text-4xl font-extrabold text-slate-900 leading-snug">
-            Powerful Shipping Network Built For Modern Businesses
+          <h2 className="text-4xl font-bold mb-6">
+            About Our Shipping Services
           </h2>
-          <p className="mt-4 text-2xl font-bold italic text-slate-900 border-b-4 border-brand-blue inline-block pb-1">
-            Powerful Logistics. Worldwide Cargo Delivery.
+          <p className="text-lg leading-relaxed text-gray-700">
+            We have been providing reliable shipping services for over two decades,
+            ensuring safe and efficient transport of goods worldwide. Our dedicated
+            team works around the clock to meet the needs of our clients, offering
+            tailored solutions for every shipment.
           </p>
-          <p className="mt-4 text-slate-600 max-w-lg">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or slightly believable.
-          </p>
-          <a
-            href="#more"
-            className="mt-8 inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
-          >
-            Read More
-          </a>
         </div>
       </div>
     </section>
