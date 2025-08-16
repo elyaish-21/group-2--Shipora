@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+<<<<<<< Updated upstream
+import { FaPlus } from "react-icons/fa";"
+=======
 import { FaPlus } from "react-icons/fa";
 
 const ProjectsSection = () => {
@@ -99,9 +102,8 @@ const ProjectsSection = () => {
           <h2 style={{ fontSize: "17px", color: "#1E90FF", margin: 0, fontWeight: "600", fontFamily: "'Jost', sans-serif" }}>Our Projects</h2>
         </div>
 
-        {/* Heading + Button */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px", paddingRight: "20px", paddingLeft: "250px" }}>
-          <h1 style={{ fontSize: "50px", fontFamily: "'Jost', sans-serif", color: "#000", margin: 0, fontWeight: "700" }}>What We Delivered</h1>
+        <div style={styles.headingRow}>
+          <h1 style={styles.sectionHeading}>What We Delivered</h1>
           <button
             style={{
               backgroundColor: "#080808ff",
