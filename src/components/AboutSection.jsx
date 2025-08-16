@@ -16,7 +16,9 @@ export default function AboutSection() {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
@@ -41,7 +43,11 @@ export default function AboutSection() {
   }, [isVisible]);
 
   return (
-    <section id="about" className="py-20 bg-white" ref={sectionRef}>
+    <section
+      id="about"
+      className="py-20 bg-white"
+      ref={sectionRef}
+    >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Image block */}
         <div className="relative flex flex-col items-start">
@@ -50,12 +56,14 @@ export default function AboutSection() {
           <div className="relative">
             <div className="absolute -left-5 top-10 h-[60%] w-[5px] bg-black rounded"></div>
 
+            {/* Main image from public/images */}
             <img
-              src={`${process.env.PUBLIC_URL}/images/ship.jpg`}
+              src="/images/ship.jpg"
               alt="Cargo ship"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
 
+            {/* 25 Years Badge */}
             <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
               <div className="text-5xl font-extrabold leading-tight">
                 {years}
