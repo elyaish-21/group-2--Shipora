@@ -35,7 +35,7 @@ export default function AboutSection() {
             {/* Main image */}
             <img
               src="/images/barko.png"
-              alt="cargo ship"
+              alt="barko pic"
               className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
             />
           </div>
