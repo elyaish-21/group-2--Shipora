@@ -44,7 +44,7 @@ export default function HeroSection() {
             {/* EXPORT */}
             <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
               <img
-                src="/images/Export.png"
+                src="./images/Export.png"
                 alt="Export Containers"
                 className="w-full h-full object-cover"
               />
