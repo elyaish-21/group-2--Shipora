@@ -4,7 +4,8 @@ export default function AboutSection() {
   const [years, setYears] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-  const base = import.meta.env.BASE_URL; // Added for correct image path
+
+  const base = import.meta.env.BASE_URL; // Ensures correct image path on GitHub Pages
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,7 +15,7 @@ export default function AboutSection() {
           observer.disconnect(); // Run only once
         }
       },
-      { threshold: 0.3 } // triggers when 30% of section is visible
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -27,7 +28,7 @@ export default function AboutSection() {
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return; // Don't start counting until visible
+    if (!isVisible) return;
 
     let start = 1;
     const end = 25;
@@ -44,11 +45,7 @@ export default function AboutSection() {
   }, [isVisible]);
 
   return (
-    <section
-      id="about"
-      className="py-20 bg-white"
-      ref={sectionRef} // Reference for Intersection Observer
-    >
+    <section id="about" className="py-20 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Image block */}
         <div className="relative flex flex-col items-start">
