@@ -1,74 +1,95 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-export default function HeroSection() {
+export default function AboutSection() {
   const base = import.meta.env.BASE_URL;
+  const [years, setYears] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Intersection observer for counter trigger
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  // Counter animation
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let start = 1;
+    const end = 25;
+    const duration = 2000;
+    const stepTime = Math.floor(duration / (end - start));
+
+    const timer = setInterval(() => {
+      start++;
+      setYears(start);
+      if (start === end) clearInterval(timer);
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [isVisible]);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#d9ebf7] to-white">
-      <div className="container-max py-16 md:py-24 grid md:grid-cols-2 items-center gap-10">
+    <section id="about" className="py-20 bg-white" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        {/* Image section */}
+        <div className="relative flex flex-col items-start">
+          <div className="w-[60%] h-[5px] bg-brand-blue rounded mb-4"></div>
 
-        {/* Text */}
-        <div>
-          <span className="inline-block bg-brand-blue text-white text-base font-semibold px-3 py-1 rounded mb-2">
-            We Ship Your Hope
-          </span>
+          <div className="relative">
+            <div className="absolute -left-5 top-10 h-[60%] w-[5px] bg-black rounded"></div>
 
-          <h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight text-slate-900">
-            We Move Your Dream Forward To Build Your Future
-          </h1>
-          <p className="mt-4 text-slate-600">
-            There are many variations of passages of Lorem Ipsum available, but the
-            majority have suffered alteration in some form, by injected humour.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="#about"
-              className="bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
-            >
-              Read More
-            </a>
+            {/* Image with BASE_URL path */}
+            <img
+              src={`${base}images/ship.jpg`}
+              alt="Cargo Ship"
+              className="rounded-2xl shadow-lg w-full h-[480px] object-cover"
+            />
 
-            <a
-              href="#contact"
-              className="bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
-            >
-              Contact Us
-            </a>
+            {/* Badge */}
+            <div className="absolute bottom-6 right-6 bg-brand-blue text-white rounded-xl shadow-lg px-8 py-5 text-center">
+              <div className="text-5xl font-extrabold leading-tight">{years}</div>
+              <div className="text-sm uppercase tracking-widest">Years of Experience</div>
+            </div>
           </div>
         </div>
 
-        {/* Imagery */}
-        <div className="relative">
-          <div className="grid grid-cols-2 gap-4">
-
-            {/* EXPORT */}
-            <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
-              <img
-                src={`${base}images/Export.png`}
-                alt="Export Containers"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* IMPORT */}
-            <div className="aspect-[4/3] rounded-2xl bg-white shadow-soft overflow-hidden">
-              <img
-                src={`${base}images/Import.png`}
-                alt="Import Containers"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* GLOBAL FREIGHT NETWORK */}
-            <div className="col-span-2 aspect-[16/9] rounded-2xl bg-white shadow-soft overflow-hidden">
-              <img
-                src={`${base}images/Cargo.jpg`}
-                alt="Global Freight Network"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-          </div>
+        {/* Text section */}
+        <div>
+          <span className="inline-block bg-blue-100 text-brand-blue text-base font-semibold px-3 py-1 rounded">
+            Why We Are
+          </span>
+          <h2 className="mt-4 text-4xl font-extrabold text-slate-900 leading-snug">
+            Powerful Shipping Network Built For Modern Businesses
+          </h2>
+          <p className="mt-4 text-2xl font-bold italic text-slate-900 border-b-4 border-brand-blue inline-block pb-1">
+            Powerful Logistics. Worldwide Cargo Delivery.
+          </p>
+          <p className="mt-4 text-slate-600 max-w-lg">
+            There are many variations of passages of Lorem Ipsum available, but the
+            majority have suffered alteration in some form, by injected humour, or
+            slightly believable.
+          </p>
+          <a
+            href="#more"
+            className="mt-8 inline-block bg-black text-white px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300"
+          >
+            Read More
+          </a>
         </div>
       </div>
     </section>
